@@ -459,9 +459,9 @@ function library:AddSectionToggle(tab, text, callback)
 	local Toggle = false
 
 	tab.stuff[text]["1e"].MouseButton1Down:Connect(function()
-		Toggle = not Toggle
+		_G.Toggle = not _G.Toggle
 
-		if Toggle == true then
+		if _G.Toggle == true then
 			tweenService:Create(tab.stuff[text]["20"].Knob, TInfo, {Position = tab.stuff[text]["20"].KnobOnPos.Position}):Play()
 			tab.stuff[text]["20"].BackColor.BackgroundColor3 = Color3.fromRGB(0,255,0)
 		else
@@ -470,7 +470,7 @@ function library:AddSectionToggle(tab, text, callback)
 			tab.stuff[text]["20"].BackColor.BackgroundColor3 = Color3.fromRGB(255,0,0)
 		end
 		
-		callback(Toggle)
+		callback(_G.Toggle)
 	end)
 end
 
