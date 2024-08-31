@@ -459,7 +459,7 @@ function library:AddSectionToggle(tab, text, callback)
 	local Toggle = false
 
 	tab.stuff[text]["1e"].MouseButton1Down:Connect(function()
-		local Toggle = not Toggle
+		Toggle = not Toggle
 
 		if Toggle == true then
 			tweenService:Create(tab.stuff[text]["20"].Knob, TInfo, {Position = tab.stuff[text]["20"].KnobOnPos.Position}):Play()
